@@ -1,0 +1,56 @@
+\documentclass[chapterprefix=false,oneside,a4paper,14pt]{extreport}
+\usepackage[dvipsnames,table]{xcolor}
+
+
+% Font tiếng Việt
+\usepackage[T5]{fontenc}
+\usepackage[utf8]{inputenc}
+\DeclareTextSymbolDefault{\DH}{T1}
+
+\usepackage{hcmus_ms}
+
+
+
+\begin{document}
+
+\include{stable/title.tex}
+
+\pagenumbering{roman} % Đánh số i, ii, iii, ...
+
+
+% Mục lục
+\addcontentsline{toc}{chapter}{Mục lục}
+\tableofcontents
+
+% Phan cong cong viec
+\include{stable/phancong.tex}
+
+
+\clearpage
+
+\pagenumbering{arabic} % Đánh số 1, 2, 3, ...
+
+
+% Các chương nội dung
+\include{content/chapter1}
+\include{content/chapter2}
+\include{content/chapter3}
+\include{content/chapter4}
+\include{content/chapter5}
+\include{content/chapter6}
+
+
+% In tài liệu tham khảo
+\addcontentsline{toc}{chapter}{Tham khảo}
+\printbibheading[title={References}]
+
+\DeclareNameAlias{sortname}{last-first}
+\DeclareNameAlias{default}{last-first}
+
+\printbibliography[heading=subbibliography, resetnumbers=true] 
+
+% Phần phụ lục
+% \include{Appendix/appendix1}
+% \include{Appendix/appendix2}
+
+\end{document}

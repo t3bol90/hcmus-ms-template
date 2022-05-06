@@ -1,0 +1,164 @@
+% tcolorbox; Notice! add "-shell-escape" to the compile command
+\usepackage{tcolorbox}
+
+\usepackage{tabularx}
+\usepackage{algorithm}
+
+\usepackage[unicode]{hyperref} % Bookmark tiếng Việt
+% Tài liệu tham khảo
+\usepackage[
+	sorting=nty,
+	backend=bibtex,
+	defernumbers=true]{biblatex}
+\addbibresource{references.bib}
+
+\makeatletter
+\def\blx@maxline{77}
+\makeatother
+
+% Chèn hình, các hình trong luận văn được để trong thư mục Images/
+\usepackage{graphicx}
+\usepackage{subcaption}
+\graphicspath{ {Images/} }
+
+% Chèn và định dạng mã nguồn
+\usepackage{listings}
+\usepackage{color}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+\lstset{style=mystyle}
+
+
+
+
+% Chèn và định dạng mã giả
+% \usepackage{amsmath}
+\usepackage{amsmath, array,multirow, makecell, caption,amsfonts}
+\DeclareMathOperator*{\argmaxA}{arg\,max}
+\DeclareMathOperator*{\argminA}{arg\,min}
+
+\usepackage{mathtools} % for 'dcases' env.
+
+% mã giả tại chỗ
+% \usepackage[margin=1in]{geometry}% For this example
+\usepackage{float}
+\usepackage[algo2e]{algorithm2e} 
+\usepackage{lipsum}% For this example
+
+\usepackage[noend]{algpseudocode}
+\makeatletter
+\def\BState{\State\hskip-\ALG@thistlm}
+\makeatother
+
+% Bảng biểu
+\usepackage{multirow}
+\usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+% Landscape table
+\usepackage{lscape}
+
+ 
+% Đổi tên mặc định
+\renewcommand{\chaptername}{Chương}
+\renewcommand{\figurename}{Hình}
+\renewcommand{\tablename}{Bảng}
+\renewcommand{\contentsname}{Mục lục}
+\renewcommand{\listfigurename}{Danh sách hình ảnh minh họa}
+\renewcommand{\listtablename}{Danh sách bảng}
+\renewcommand{\appendixname}{Phụ lục}
+
+\makeatletter
+\renewcommand\listoffigures{%
+  \subsection*{\listfigurename}%
+  \@mkboth{\MakeUppercase\listfigurename}{\MakeUppercase\listfigurename}%
+  \@starttoc{lof}%
+}
+\renewcommand\listoftables{%
+  \subsection*{\listtablename}%
+  \@mkboth{\MakeUppercase\listtablename}{\MakeUppercase\listtablename}%
+  \@starttoc{lot}%
+}
+\makeatother
+
+% Định dạng chapter
+\usepackage{titlesec}
+\titleformat{\chapter}
+    % [display] 
+    {\normalfont\bfseries\normalsize}{\thechapter}{10pt}{\normalsize}
+\titlespacing*{\chapter}{0pt}{-10pt}{1em} %khoảng cách giữa chapter và đầu trang
+
+\titleformat{\section}
+    {\normalfont\bfseries\normalsize}{\thesection}{1em}{\normalsize}
+ 
+\titleformat{\subsection}
+    {\normalfont\bfseries\normalsize}{\thesubsection}{1em}{\normalsize}
+  
+% Dãn dòng 1.5
+\usepackage{setspace}
+\onehalfspacing
+
+% Thụt vào đầu dòng
+\usepackage{indentfirst}
+
+% Màu ref
+    \hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    pdftitle={Thesis Dissertation: Apply Meta-Learning in NLP's Tasks},
+    pdfpagemode=FullScreen,
+    }
+
+% Auto wrap table
+\usepackage{tabulary}
+\usepackage{booktabs}
+
+% Canh lề
+\usepackage[
+  top=20mm,
+  bottom=10mm,
+  left=30mm,
+  right=20mm,
+  footskip = 15mm,
+  includefoot]{geometry}
+  
+% Trang bìa
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\newcommand\HRule{\rule{\textwidth}{1pt}}
+\newcommand*{\Perm}[2]{{}^{#1}\!P_{#2}}%
+
+
+\newcommand{\tabitem}{~~\llap{\textbullet}~~}
+\newcommand{\tabitemstar}{~~\llap{}~~}
+
+
+\newcommand{\cmt}[1]{
+\begin{tcolorbox}
+		\textit{#1}
+\end{tcolorbox}
+}
